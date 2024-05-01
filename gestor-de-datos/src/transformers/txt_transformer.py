@@ -2,7 +2,7 @@ from src.extractors.txt_extractor import TXTExtractor
 from os.path import join
 import luigi, os, json
 
-class TXTTransformer(luigi.task):
+class TXTTransformer(luigi.Task):
     def requires(self):
         return TXTExtractor()
     
@@ -14,6 +14,13 @@ class TXTTransformer(luigi.task):
                 for line in lines:
                     entry = line.strip().split()
                     if not entry[0]:
+                        continue
+
+                    try:
+                        quantity = float(entry[1])
+                        price = float(entry[2])
+                    except ValueError:
+                        print(f"Error: No se pudo convertir '{entry[1]}' o '{entry[2]}' a float.")
                         continue
 
                     result.append(
