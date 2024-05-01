@@ -1,3 +1,15 @@
+##!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#-------------------------------------------------------------------------
+# Archivo: csv_transformer.py
+# Capitulo: Flujo de Datos
+# Autor(es): Aldo De La Rosa & Ricardo & Juan Pablo & Javier Vargas
+# Version: 1.0.0 Abril 2024
+# Descripción:
+#
+#   Este archivo define un procesador de datos que se encarga de transformar
+#   y formatear el contenido de un archivo TXT
+#-------------------------------------------------------------------------
 from src.extractors.txt_extractor import TXTExtractor
 from os.path import join
 import luigi, os, json

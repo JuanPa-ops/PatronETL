@@ -1,0 +1,4 @@
+...file C:\Users\aldog\OneDrive\Documentos\IS\2024\IS-2024-1\Materias\Arquitectura\Curricular\Implementacion\ETL\gestor-de-datos\result\csv.json processed
+...file C:\Users\aldog\OneDrive\Documentos\IS\2024\IS-2024-1\Materias\Arquitectura\Curricular\Implementacion\ETL\gestor-de-datos\result\xml.json processed
+...file C:\Users\aldog\OneDrive\Documentos\IS\2024\IS-2024-1\Materias\Arquitectura\Curricular\Implementacion\ETL\gestor-de-datos\result\htm.json processed
+...file C:\Users\aldog\OneDrive\Documentos\IS\2024\IS-2024-1\Materias\Arquitectura\Curricular\Implementacion\ETL\gestor-de-datos\result\txt.json processed
