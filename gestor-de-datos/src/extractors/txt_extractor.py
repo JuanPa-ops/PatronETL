@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------
 # Archivo: csv_extractor.py
 # Capitulo: Flujo de Datos
-# Autor(es): Aldo De La Rosa & Ricardo & Juan Pablo & Javier Vargas
+# Autor(es): Aldo De La Rosa & Ricardo Sánchez & Juan Pablo & Javier Vargas
 # Version: 1.0.0 Abril 2024
 # Descripción:
 #

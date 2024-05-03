@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------
 # Archivo: csv_transformer.py
 # Capitulo: Flujo de Datos
-# Autor(es): Aldo De La Rosa & Ricardo & Juan Pablo & Javier Vargas
+# Autor(es): Aldo De La Rosa & Ricardo Sánchez & Juan Pablo & Javier Vargas
 # Version: 1.0.0 Abril 2024
 # Descripción:
 #
@@ -22,30 +22,24 @@ class TXTTransformer(luigi.Task):
         result = []
         for file in self.input():
             with file.open() as txt_file:
-                lines = txt_file.readlines()
+                headers_str = txt_file.readline()
+                content_str = txt_file.readline()
+
+                lines = content_str.split(';')
+                lines.pop()
+
                 for line in lines:
-                    entry = line.strip().split()
-                    if not entry[0]:
-                        continue
-
-                    try:
-                        quantity = float(entry[1])
-                        price = float(entry[2])
-                    except ValueError:
-                        print(f"Error: No se pudo convertir '{entry[1]}' o '{entry[2]}' a float.")
-                        continue
-
-                    result.append(
-                        {
-                            "description": entry[0],
-                            "quantity": entry[1],
-                            "price": entry[2],
-                            "total": float(entry[1]) * float(entry[2]),
-                            "invoice": entry[3],
-                            "provider": entry[4],
-                            "country": entry[5]
-                        }
-                    )
+                    datos = line.split(',')
+                    numero, codigo, desc, montante, fecha, precio, id, pais = datos
+                    result.append({
+                        "description": desc,
+                        "quantity": montante,
+                        "price": precio,
+                        "total": float(precio) * float(montante),
+                        "invoice": numero,
+                        "provider": id,
+                        "country": pais
+                    })
         with self.output().open('w') as out:
             out.write(json.dumps(result, indent=4))
 
